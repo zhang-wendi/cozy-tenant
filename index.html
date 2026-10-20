@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1f1207" />
+  <title>My Cozy Tenant · Anaya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,800;1,600&family=Poppins:ital,wght@0,400;0,600;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+
+    <header class="topbar">
+      <div class="brand">My <span>Cozy Tenant</span></div>
+      <div class="favor-panel">
+        <div class="lv-badge" id="lvBadge">Lv 1</div>
+        <div class="favor-track">
+          <div class="favor-fill" id="favorFill"></div>
+        </div>
+        <div class="favor-num" id="favorNum">0 / 60</div>
+      </div>
+      <button class="icon-btn" id="muteBtn" aria-label="Toggle sound">🔊</button>
+    </header>
+
+    <section class="stage">
+      <div class="arch" id="arch">
+        <img class="arch-poster" src="assets/anaya_main.jpg" alt="" draggable="false" />
+        <video data-video="idle" src="assets/idle.mp4" muted playsinline loop preload="auto"></video>
+        <video data-video="happy" src="assets/happy.mp4" muted playsinline preload="auto"></video>
+        <video data-video="finale" src="assets/finale.mp4" muted playsinline preload="auto"></video>
+        <div class="flare" id="flare"></div>
+        <div class="hearts" id="hearts"></div>
+      </div>
+      <div class="name-tag">Anaya <span class="dot">·</span> your tenant, Room 204</div>
+      <div class="bubble" id="bubble">H-hi… I'm Anaya. Thanks for the room!</div>
+    </section>
+
+    <section class="actions">
+      <div class="combo-row">
+        <div class="combo-chip" id="comboChip" hidden>Combo <b id="comboNum">0</b> <span id="comboMul">x1.0</span></div>
+      </div>
+      <button class="tap-btn" id="tapBtn">
+        <span class="tap-emoji">💖</span>
+        <span class="tap-label">TAP ANAYA</span>
+      </button>
+      <div class="sub-actions">
+        <button class="pill-btn" id="galleryBtn">🖼️ Gallery <span class="badge-dot" id="galleryDot" hidden></span></button>
+      </div>
+    </section>
+
+    <!-- 相册弹层 -->
+    <div class="overlay" id="galleryOverlay" hidden>
+      <div class="sheet">
+        <div class="sheet-head">
+          <div class="sheet-title">Anaya's Photos <span id="galleryCount">0/6</span></div>
+          <button class="close-btn" id="galleryClose">✕</button>
+        </div>
+        <div class="photo-grid" id="photoGrid"></div>
+        <button class="pill-btn finale-replay" id="replayFinaleBtn" hidden>💫 Replay Finale</button>
+      </div>
+      <div class="viewer" id="viewer" hidden>
+        <img id="viewerImg" src="" alt="" />
+        <div class="viewer-title" id="viewerTitle"></div>
+        <button class="close-btn" id="viewerClose">✕</button>
+      </div>
+    </div>
+
+    <!-- 升级 / 结局横幅 -->
+    <div class="banner" id="banner">
+      <div class="banner-title" id="bannerTitle"></div>
+      <div class="banner-sub" id="bannerSub"></div>
+    </div>
+
+    <!-- 结局彩带 -->
+    <div class="confetti" id="confetti"></div>
+
+    <!-- toast -->
+    <div class="toast" id="toast"></div>
+
+    <div class="audio-hint" id="audioHint" hidden>👆 Tap anywhere to start the music</div>
+  </div>
+
+  <script src="audio.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
